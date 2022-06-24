@@ -41,6 +41,7 @@
     <div class="container text-center">
         <h4><a href="{{route('admin.posts.index')}}">Vai ai posts</a></h4>
         <h4><a href="{{route('admin.categories.index')}}">Vai alle categorie</a></h4>
+        <h4><a href="{{route('admin.tags.index')}}">Vai ai tags</a></h4>
     </div>
     <script src="{{asset('js/front.js')}}" charset="utf-8"></script>
 </body>

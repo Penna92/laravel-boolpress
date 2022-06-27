@@ -13,8 +13,6 @@ class TagController extends Controller
 {
     protected $validationRule = [
         'name' => 'required|string|max:100',
-        // "image" => 
-        "tag" => ""
     ];
     /**
      * Display a listing of the resource.
@@ -118,9 +116,10 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Tag $tag)
     {
-        $tag = Tag::findOrFail($id);
+        $tag->posts()->sync([]); //potrebbe essere superfluo, verificare
+        // $tag = Tag::findOrFail($id);
         $tag->delete();
         return redirect()->route('admin.tags.index')->with("message", "Tag with id: {$tag->id} successfully deleted !");
     }

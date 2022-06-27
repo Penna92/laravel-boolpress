@@ -38,6 +38,16 @@
             @enderror
         </div>
 
+        {{-- IMAGE --}}
+        <div class="form-group">
+            <img id="uploadPreview" width="100" src="https://via.placeholder.com/300x200">
+            <label for="image">Aggiungi immagine</label>
+            <input type="file" id="image" name="image" onchange="boolpress.previewImage();">
+            @error('image')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+
         {{-- TAGS --}}
         <div class="mb-3">
             <div class="form-group">
@@ -64,4 +74,9 @@
         <button type="submit" class="btn btn-primary">Crea</button>
     </form>
 </div>
+<script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+    bkLib.onDomLoaded(nicEditors.allTextAreas);
+</script>
 @endsection

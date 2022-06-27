@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@include('partials/popupdelete')
 {{-- @dump($categories) --}}
 @section('content')
 <div class="container">
@@ -51,7 +52,7 @@
                     <form action="{{route('admin.categories.destroy', $category->id)}}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" @@click="openModal($event, {{$category->id}})"
+                        <button type="submit" onclick="boolpress.openModal(event, {{ $category->id }})"
                             class="btn btn-danger delete">Delete</button>
                     </form>
                 </td>

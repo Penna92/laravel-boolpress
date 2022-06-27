@@ -3,7 +3,8 @@
 @dump($categories) --}}
 @section('content')
 <div class="container">
-    <form action="{{route('admin.posts.update', $post->id)}}" method="POST">
+    <h2>Modifica Post: {{$post->title}}</h2>
+    <form action="{{route('admin.posts.update', $post->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="mb-3">
@@ -20,6 +21,17 @@
                 rows="10">{{$post->content}}</textarea>
             @error('content')
             <div class="alert alert-danger">{{$message}}</div>
+            @enderror
+        </div>
+        <div class="form-group">
+            @if ($post->image)
+            <img id="uploadPreview" width="100" src="{{asset(" storage/{$post->image}")}}"
+            alt="{{$post->title}}">
+            @endif
+            <label for="image">Aggiungi immagine</label>
+            <input type="file" id="image" name="image" onchange="boolpress.previewImage();">
+            @error('image')
+            <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="mb-3 form-check">
@@ -43,4 +55,9 @@
         <button type="submit" class="btn btn-primary">Modifica</button>
     </form>
 </div>
+<script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+    bkLib.onDomLoaded(nicEditors.allTextAreas);
+</script>
 @endsection

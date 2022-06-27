@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 use App\Post;
 use App\Category;
 use App\Tag;
@@ -17,8 +18,8 @@ class PostController extends Controller
         'content' => 'required',
         "published" => "sometimes|accepted",
         "category_id" => "nullable|exists:categories,id",
-        // "image" => 
-        "tag" => ""
+        "image" => "nullable|image|mimes:jpeg,bmp,png,svg|max:2048",
+        "tag" => "nullable|exists:tags,id",
     ];
     /**
      * Display a listing of the resource.
@@ -54,6 +55,7 @@ class PostController extends Controller
     {
         $request->validate($this->validationRule);
         $data = $request->all();
+
         $newPost = new Post();
         $newPost->title = $data['title'];
         $newPost->content = $data['content'];
@@ -68,8 +70,16 @@ class PostController extends Controller
             $count++;
         }
         $newPost->slug = $slug;
+
         // $newPost->slug = $this->getSlug($newPost->title);
         // la traduzione in mysql = vai a prendere dalla tabella dei Post tutti quelli che hanno lo slug uguale a questa stringa qua e cambialo in questo modo
+
+        // IMMAGINE
+        if (isset($data['image'])) {
+            $path_image = Storage::put("uploads", $data['image']); // uploads/nomeimg.jpg
+            $newPost->image = $path_image;
+        }
+
         $newPost->save();
 
         // METODO SYNC CON CONTROLLO
@@ -145,6 +155,14 @@ class PostController extends Controller
         $post->category_id = $data['category_id'];
         $post->content = $data['content'];
         $post->published = isset($data["published"]);
+        // IMMAGINE
+        if (isset($data['image'])) {
+            // cancello l'immagine
+            Storage::delete($post->image);
+            // salvo la nuova immagine
+            $path_image = Storage::put("uploads", $data['image']);
+            $post->image = $path_image;
+        }
         $post->update();
 
         // METODO SYNC ANCHE QUI CON CONTROLLO

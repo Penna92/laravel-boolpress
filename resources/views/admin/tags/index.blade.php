@@ -1,27 +1,8 @@
 @extends('layouts.admin')
+@include('partials/popupdelete')
 {{-- @dump($tags) --}}
 @section('content')
 <div class="container">
-    <!-- Modal -->
-    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">Confirm tag delete</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Sei sicuro di voler eliminare il tag con id: @{{itemId}} ?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger" @@click="submitForm()">Conferma</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <a href="{{route('admin.tags.create')}}" class="btn btn-primary my-3">Crea nuovo tag</a>
     @if(session()->has('message'))
     <div class="alert alert-success">
@@ -51,7 +32,7 @@
                     <form action="{{route('admin.tags.destroy', $tag->id)}}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" @@click="openModal($event, {{$tag->id}})"
+                        <button type="submit" onclick="boolpress.openModal(event, {{ $tag->id }})"
                             class="btn btn-danger delete">Delete</button>
                     </form>
                 </td>

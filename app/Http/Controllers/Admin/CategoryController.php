@@ -12,8 +12,6 @@ class CategoryController extends Controller
 {
     protected $validationRule = [
         'name' => 'required|string|max:100',
-        // "image" => 
-        "tag" => ""
     ];
     /**
      * Display a listing of the resource.

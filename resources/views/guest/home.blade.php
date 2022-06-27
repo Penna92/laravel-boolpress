@@ -22,7 +22,7 @@
             @if (Route::has('login'))
             <div class="d-flex">
                 @auth
-                <a href=" {{ url('/admin') }}" class="mx-5 ">Home</a>
+                <a href=" {{ url('/admin') }}" class="mx-5 ">Area Riservata</a>
                 @else
                 <a href="{{ route('login') }}" class="">Login</a>
 
@@ -38,11 +38,11 @@
     <div id="root">
 
     </div>
-    <div class="container text-center">
+    {{-- <div class="container text-center">
         <h4><a href="{{route('admin.posts.index')}}">Vai ai posts</a></h4>
         <h4><a href="{{route('admin.categories.index')}}">Vai alle categorie</a></h4>
         <h4><a href="{{route('admin.tags.index')}}">Vai ai tags</a></h4>
-    </div>
+    </div> --}}
     <script src="{{asset('js/front.js')}}" charset="utf-8"></script>
 </body>
 

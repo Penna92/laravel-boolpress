@@ -2,7 +2,7 @@
 {{-- @dump($tags); --}}
 @section('content')
 <div class="container">
-    <form action="{{route('admin.posts.store')}}" method="POST">
+    <form action="{{route('admin.posts.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
         {{-- TITOLO --}}

@@ -25,8 +25,7 @@
         </div>
         <div class="form-group">
             @if ($post->image)
-            <img id="uploadPreview" width="100" src="{{asset(" storage/{$post->image}")}}"
-            alt="{{$post->title}}">
+            <img id="uploadPreview" width="100" src="{{asset(" storage/{$post->image}")}}">
             @endif
             <label for="image">Aggiungi immagine</label>
             <input type="file" id="image" name="image" onchange="boolpress.previewImage();">

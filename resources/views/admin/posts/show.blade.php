@@ -16,7 +16,11 @@
         <h2>Contenuto: </h2>
         <p>{{$post->content}}</p>
     </div>
-
+    @if ($post->image)
+    <div class="text-center w-25 mt-3">
+        <img src="{{ asset('storage/' . $post->image) }}" class="rounded " alt="{{ $post->title }}">
+    </div>
+    @endif
     {{-- condizione per stampare il valore corretto a seconda del booleano --}}
     @if ($post->published == '1')
     {{-- <h5>Pubblicato il {{$mytime}}</h5> Prova per inserire la data di pubblicazione (da fixare) --}}

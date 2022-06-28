@@ -7,12 +7,16 @@
       <div class="card mb-5">
         <ul v-if="posts.length > 0">
           <li v-for="(post, index) in posts" :key="post.id">
-            {{ index }} - {{ post.title }}
-            <router-link
-              :to="{ name: 'single-post', params: { slug: post.slug } }"
-              >Visualizza Post</router-link
-            >
-            <hr />
+            <!-- condizione che stampa solo i post pubblicati -->
+            <span v-if="post.published == 1">
+              {{ index }} - {{ post.title }}
+              <router-link
+                class="mx-2"
+                :to="{ name: 'single-post', params: { slug: post.slug } }"
+                >Visualizza Post</router-link
+              >
+              <hr />
+            </span>
           </li>
         </ul>
       </div>
@@ -29,6 +33,7 @@ export default {
       sottotitolo: "Sito in Costruzione",
       posts: [],
       detail: null,
+      date: null,
     };
   },
   methods: {
@@ -43,6 +48,21 @@ export default {
     axios.get("/api/posts").then((response) => {
       this.posts = response.data;
     });
+  },
+  computed: {
+    // prova() {
+    //   this.posts.foreach((el) => {
+    //     // console.log(el.created_at.substr(0, 19).replace("T", ", "));
+    //     return console.log(el);
+    //   });
+    // },
+    // formattazione data
+    // formatDate() {
+    //   this.posts.foreach((el) => {
+    //     let date = el.created_at.substr(0, 19).replace("T", ", ");
+    //     return date;
+    //   });
+    // },
   },
 };
 </script>

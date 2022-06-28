@@ -19537,6 +19537,10 @@ readers do not read off random characters that represent icons */
   content: "\F63F";
 }
 
+li {
+  list-style-type: none;
+}
+
 nav a {
   text-decoration: none;
   color: white;
@@ -19558,8 +19562,4 @@ h2 {
 
 .content p {
   font-size: 24px;
-}
-
-li {
-  list-style-type: none;
 }

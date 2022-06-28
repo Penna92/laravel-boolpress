@@ -1,17 +1,14 @@
 <template>
   <footer>
-    <ul>
-      <li><a href="#">Link utili</a></li>
-      <li><a href="#">Link utili</a></li>
-      <li><a href="#">Link utili</a></li>
-      <li><a href="#">Link utili</a></li>
-    </ul>
+  <div class="container">
+  <h1>Footer</h1>
+  </div>
   </footer>
 </template>
 
 <script>
 export default {
-  name: "HeaderComponents",
+  name: "FooterComponent",
 };
 </script>
 

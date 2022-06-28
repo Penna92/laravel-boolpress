@@ -19536,3 +19536,8 @@ readers do not read off random characters that represent icons */
 .fa-zhihu:before {
   content: "\F63F";
 }
+
+img {
+  width: 250px;
+  height: 300px;
+}

@@ -1,6 +1,8 @@
 <template>
-  <div class="container">
+  <div>
+    <header-component />
     <MainComponent />
+    <FooterComponent />
   </div>
 </template>
 

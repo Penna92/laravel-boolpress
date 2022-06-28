@@ -1916,6 +1916,209 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FooterComponent"
 });
@@ -2243,6 +2446,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -38549,8 +38755,288 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("footer", [
-      _c("div", { staticClass: "container" }, [_c("h1", [_vm._v("Footer")])]),
+    return _c("footer", { staticClass: "bg-dark text-center text-white" }, [
+      _c("div", { staticClass: "container p-4" }, [
+        _c("section", { staticClass: "mb-4" }, [
+          _c(
+            "a",
+            {
+              staticClass: "btn btn-outline-light btn-floating m-1",
+              attrs: { href: "#!", role: "button" },
+            },
+            [_c("i", { staticClass: "fab fa-facebook-f" })]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "btn btn-outline-light btn-floating m-1",
+              attrs: { href: "#!", role: "button" },
+            },
+            [_c("i", { staticClass: "fab fa-twitter" })]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "btn btn-outline-light btn-floating m-1",
+              attrs: { href: "#!", role: "button" },
+            },
+            [_c("i", { staticClass: "fab fa-google" })]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "btn btn-outline-light btn-floating m-1",
+              attrs: { href: "#!", role: "button" },
+            },
+            [_c("i", { staticClass: "fab fa-instagram" })]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "btn btn-outline-light btn-floating m-1",
+              attrs: { href: "#!", role: "button" },
+            },
+            [_c("i", { staticClass: "fab fa-linkedin-in" })]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "btn btn-outline-light btn-floating m-1",
+              attrs: { href: "#!", role: "button" },
+            },
+            [_c("i", { staticClass: "fab fa-github" })]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("section", {}, [
+          _c("form", { attrs: { action: "" } }, [
+            _c("div", { staticClass: "row d-flex justify-content-center" }, [
+              _c("div", { staticClass: "col-auto" }, [
+                _c("p", { staticClass: "pt-2" }, [
+                  _c("strong", [_vm._v("Sign up for our newsletter")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-5 col-12" }, [
+                _c("div", { staticClass: "form-outline form-white mb-4" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: { type: "email", id: "form5Example21" },
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "label",
+                    {
+                      staticClass: "form-label",
+                      attrs: { for: "form5Example21" },
+                    },
+                    [_vm._v("Email address")]
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-auto" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-outline-light mb-4",
+                    attrs: { type: "" },
+                  },
+                  [_vm._v("\n              Subscribe\n            ")]
+                ),
+              ]),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("section", { staticClass: "mb-4" }, [
+          _c("p", [
+            _vm._v(
+              "\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt\n        distinctio earum repellat quaerat voluptatibus placeat nam, commodi\n        optio pariatur est quia magnam eum harum corrupti dicta, aliquam sequi\n        voluptate quas.\n      "
+            ),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("section", {}, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-3 col-md-6 mb-4 mb-md-0" }, [
+              _c("h5", { staticClass: "text-uppercase" }, [_vm._v("Links")]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "list-unstyled mb-0" }, [
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "text-white", attrs: { href: "#!" } },
+                    [_vm._v("Link 1")]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "text-white", attrs: { href: "#!" } },
+                    [_vm._v("Link 2")]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "text-white", attrs: { href: "#!" } },
+                    [_vm._v("Link 3")]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "text-white", attrs: { href: "#!" } },
+                    [_vm._v("Link 4")]
+                  ),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-3 col-md-6 mb-4 mb-md-0" }, [
+              _c("h5", { staticClass: "text-uppercase" }, [_vm._v("Links")]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "list-unstyled mb-0" }, [
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "text-white", attrs: { href: "#!" } },
+                    [_vm._v("Link 1")]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "text-white", attrs: { href: "#!" } },
+                    [_vm._v("Link 2")]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "text-white", attrs: { href: "#!" } },
+                    [_vm._v("Link 3")]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "text-white", attrs: { href: "#!" } },
+                    [_vm._v("Link 4")]
+                  ),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-3 col-md-6 mb-4 mb-md-0" }, [
+              _c("h5", { staticClass: "text-uppercase" }, [_vm._v("Links")]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "list-unstyled mb-0" }, [
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "text-white", attrs: { href: "#!" } },
+                    [_vm._v("Link 1")]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "text-white", attrs: { href: "#!" } },
+                    [_vm._v("Link 2")]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "text-white", attrs: { href: "#!" } },
+                    [_vm._v("Link 3")]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "text-white", attrs: { href: "#!" } },
+                    [_vm._v("Link 4")]
+                  ),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-3 col-md-6 mb-4 mb-md-0" }, [
+              _c("h5", { staticClass: "text-uppercase" }, [_vm._v("Links")]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "list-unstyled mb-0" }, [
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "text-white", attrs: { href: "#!" } },
+                    [_vm._v("Link 1")]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "text-white", attrs: { href: "#!" } },
+                    [_vm._v("Link 2")]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "text-white", attrs: { href: "#!" } },
+                    [_vm._v("Link 3")]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "text-white", attrs: { href: "#!" } },
+                    [_vm._v("Link 4")]
+                  ),
+                ]),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "text-center p-3",
+          staticStyle: { "background-color": "rgba(0, 0, 0, 0.2)" },
+        },
+        [
+          _vm._v("\n    © 2020 Copyright:\n    "),
+          _c(
+            "a",
+            {
+              staticClass: "text-white",
+              attrs: { href: "https://mdbootstrap.com/" },
+            },
+            [_vm._v("MDBootstrap.com")]
+          ),
+        ]
+      ),
     ])
   },
 ]
@@ -38576,51 +39062,47 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("header", { staticClass: "mb-5" }, [
-    _c(
-      "nav",
-      { staticClass: "navbar navbar-expand-lg navbar-dark bg-primary" },
-      [
-        _c("div", { staticClass: "container" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "collapse navbar-collapse",
-              attrs: { id: "navbarNavAltMarkup" },
-            },
-            [
-              _c(
-                "div",
-                { staticClass: "navbar-nav" },
-                [
-                  _vm._m(1),
-                  _vm._v(" "),
-                  _vm._l(_vm.menuItem, function (item, index) {
-                    return _c(
-                      "div",
-                      { key: index },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "nav-link",
-                            attrs: { to: { name: item.routeName } },
-                          },
-                          [_vm._v(_vm._s(item.label) + "\n            ")]
-                        ),
-                      ],
-                      1
-                    )
-                  }),
-                ],
-                2
-              ),
-            ]
-          ),
-        ]),
-      ]
-    ),
+    _c("nav", { staticClass: "navbar navbar-expand-lg navbar-dark bg-dark" }, [
+      _c("div", { staticClass: "container" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "collapse navbar-collapse",
+            attrs: { id: "navbarNavAltMarkup" },
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "navbar-nav" },
+              [
+                _vm._m(1),
+                _vm._v(" "),
+                _vm._l(_vm.menuItem, function (item, index) {
+                  return _c(
+                    "div",
+                    { key: index },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "nav-link",
+                          attrs: { to: { name: item.routeName } },
+                        },
+                        [_vm._v(_vm._s(item.label) + "\n            ")]
+                      ),
+                    ],
+                    1
+                  )
+                }),
+              ],
+              2
+            ),
+          ]
+        ),
+      ]),
+    ]),
   ])
 }
 var staticRenderFns = [
@@ -38896,19 +39378,23 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("section", [
     _vm.post
-      ? _c("div", { staticClass: "card" }, [
+      ? _c("div", { staticClass: "card container" }, [
           _c("h1", [_vm._v("Titolo: " + _vm._s(_vm.post.title))]),
           _vm._v(" "),
-          _c("p", [_vm._v("Descrizione: " + _vm._s(_vm.post.content))]),
+          _c("span", [
+            _c("h2", [_vm._v("Descrizione:")]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.post.content))]),
+          ]),
           _vm._v(" "),
           _vm.post.tags
             ? _c(
-                "ul",
+                "div",
                 [
-                  _vm._m(0),
+                  _c("h4", [_vm._v("Tags:")]),
                   _vm._v(" "),
                   _vm._l(_vm.post.tags, function (tag) {
-                    return _c("li", { key: tag.id }, [_vm._v(_vm._s(tag.name))])
+                    return _c("p", { key: tag.id }, [_vm._v(_vm._s(tag.name))])
                   }),
                 ],
                 2
@@ -38920,14 +39406,7 @@ var render = function () {
       : _vm._e(),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [_c("h4", [_vm._v("Tags:")])])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

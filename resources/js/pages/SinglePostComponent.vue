@@ -1,12 +1,15 @@
 <template>
   <section>
-    <div class="card" v-if="post">
+    <div class="card container" v-if="post">
       <h1>Titolo: {{ post.title }}</h1>
-      <p>Descrizione: {{ post.content }}</p>
-      <ul v-if="post.tags">
-        <li><h4>Tags:</h4></li>
-        <li v-for="tag in post.tags" :key="tag.id">{{ tag.name }}</li>
-      </ul>
+      <span>
+        <h2>Descrizione:</h2>
+        <p>{{ post.content }}</p>
+      </span>
+      <div v-if="post.tags">
+        <h4>Tags:</h4>
+        <p v-for="tag in post.tags" :key="tag.id">{{ tag.name }}</p>
+      </div>
       <img :src="`/storage/${post.image}`" alt="" />
     </div>
   </section>

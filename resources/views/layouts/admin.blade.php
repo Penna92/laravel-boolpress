@@ -29,18 +29,29 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Home
-                </a>
-                <a class="navbar-brand" href="{{ url('/admin/posts') }}">
-                    Posts
-                </a>
-                <a class="navbar-brand" href="{{ url('/admin/categories') }}">
-                    Categories
-                </a>
-                <a class="navbar-brand" href="{{ url('/admin/tags') }}">
-                    Tags
-                </a>
+
+                <ul class="navbar-nav mr-auto">
+                    @auth
+                    <li class="nav-item">
+                        <a class="nav-link {{Route::currentRouteName() == 'admin.home' ? 'active' : ''}}"
+                            href="{{ url('/') }}">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{Route::currentRouteName() == 'admin.posts.index' ? 'active' : ''}}"
+                            href="{{ route('admin.posts.index') }}">Posts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{Route::currentRouteName() == 'admin.categories.index' ? 'active' : ''}}"
+                            href="{{ route('admin.categories.index') }}">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{Route::currentRouteName() == 'admin.tags.index' ? 'active' : ''}}"
+                            href="{{ route('admin.tags.index') }}">Tags</a>
+                    </li>
+                    @endauth
+                </ul>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">

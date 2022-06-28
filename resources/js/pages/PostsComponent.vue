@@ -4,15 +4,18 @@
     <h2 class="text-danger">{{ sottotitolo }}</h2> -->
     <section>
       <h1>Lista Posts</h1>
-      <ul v-if="posts.length > 0">
-        <li v-for="(post, index) in posts" :key="post.id">
-          {{ index }} - {{ post.title }}
-          <router-link
-            :to="{ name: 'single-post', params: { slug: post.slug } }"
-            >Visualizza Post</router-link
-          >
-        </li>
-      </ul>
+      <div class="card mb-5">
+        <ul v-if="posts.length > 0">
+          <li v-for="(post, index) in posts" :key="post.id">
+            {{ index }} - {{ post.title }}
+            <router-link
+              :to="{ name: 'single-post', params: { slug: post.slug } }"
+              >Visualizza Post</router-link
+            >
+            <hr />
+          </li>
+        </ul>
+      </div>
     </section>
   </section>
 </template>
@@ -44,5 +47,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+ul {
+  margin-left: 0 !important;
+  padding-left: 5px !important;
+  padding-top: 20px;
+}
 </style>

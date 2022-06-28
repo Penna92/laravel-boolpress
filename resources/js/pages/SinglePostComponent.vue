@@ -1,10 +1,11 @@
 <template>
   <section>
-    <div class="card container" v-if="post">
+    <div class="card container mb-5" v-if="post">
       <h1>Titolo: {{ post.title }}</h1>
       <span>
         <h2>Descrizione:</h2>
-        <p>{{ post.content }}</p>
+        <!-- metodo per formattare l'html su vue -->
+        <p v-html="post.content"></p>
       </span>
       <div v-if="post.tags">
         <h4>Tags:</h4>
@@ -33,5 +34,11 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.card {
+  img {
+    width: 250px;
+    height: 300px;
+  }
+}
 </style>

@@ -19545,3 +19545,8 @@ img {
   width: 250px;
   height: 300px;
 }
+
+ul {
+  padding-left: 0px !important;
+  margin-left: 0px !important;
+}

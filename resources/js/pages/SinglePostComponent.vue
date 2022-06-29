@@ -27,21 +27,30 @@
             :alt="`immagine ` + post.title"
           />
         </div>
-        <div>
+        <div class="card mt-5 p-3">
+          <h3>Inserisci un commento</h3>
           <form @submit.prevent="addComment()">
-            <label for="username">Inserisci il nome</label>
-            <input v-model="formData.username" type="text" />
-            <label for="content">Inserisci il contenuto</label>
-            <input v-model="formData.content" type="text" />
-            <button type="submit">Invia</button>
+            <div class="d-flex align-items-center">
+              <label for="username">Nome</label>
+              <input class="mx-2" v-model="formData.username" type="text" />
+              <label class="mx-2" for="content">Testo</label>
+              <textarea
+                v-model="formData.content"
+                type="text"
+                rows="6"
+                cols="50"
+              >
+              </textarea>
+              <button class="mx-3 btn btn-primary" type="submit">Invia</button>
+            </div>
           </form>
         </div>
-        <div v-if="post.comments.length > 0">
+        <ul class="mt-3" v-if="post.comments.length > 0">
           <h4>Commenti:</h4>
-          <div v-for="comment in post.comments" :key="comment.id">
-            {{ comment.content }}
-          </div>
-        </div>
+          <li v-for="comment in post.comments" :key="comment.id">
+            {{ comment.username }}: {{ comment.content }}
+          </li>
+        </ul>
       </div>
     </div>
   </section>
@@ -98,6 +107,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+ul {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
 .card {
   img {
     width: 250px;

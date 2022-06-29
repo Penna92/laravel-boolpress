@@ -2543,6 +2543,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SinglePostComponent",
   data: function data() {
@@ -7045,7 +7054,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card img[data-v-253b705c] {\n  width: 250px;\n  height: 300px;\n}\nh1[data-v-253b705c],\nh2[data-v-253b705c],\nh3[data-v-253b705c],\nh4[data-v-253b705c],\nh5[data-v-253b705c],\nh6[data-v-253b705c] {\n  color: black;\n}", ""]);
+exports.push([module.i, "ul[data-v-253b705c] {\n  padding-left: 0 !important;\n  margin-left: 0 !important;\n}\n.card img[data-v-253b705c] {\n  width: 250px;\n  height: 300px;\n}\nh1[data-v-253b705c],\nh2[data-v-253b705c],\nh3[data-v-253b705c],\nh4[data-v-253b705c],\nh5[data-v-253b705c],\nh6[data-v-253b705c] {\n  color: black;\n}", ""]);
 
 // exports
 
@@ -39694,7 +39703,9 @@ var render = function () {
                 ])
               : _vm._e(),
             _vm._v(" "),
-            _c("div", [
+            _c("div", { staticClass: "card mt-5 p-3" }, [
+              _c("h3", [_vm._v("Inserisci un commento")]),
+              _vm._v(" "),
               _c(
                 "form",
                 {
@@ -39706,58 +39717,72 @@ var render = function () {
                   },
                 },
                 [
-                  _c("label", { attrs: { for: "username" } }, [
-                    _vm._v("Inserisci il nome"),
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
+                  _c("div", { staticClass: "d-flex align-items-center" }, [
+                    _c("label", { attrs: { for: "username" } }, [
+                      _vm._v("Nome"),
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.formData.username,
+                          expression: "formData.username",
+                        },
+                      ],
+                      staticClass: "mx-2",
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.formData.username },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.formData,
+                            "username",
+                            $event.target.value
+                          )
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticClass: "mx-2", attrs: { for: "content" } },
+                      [_vm._v("Testo")]
+                    ),
+                    _vm._v(" "),
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.formData.content,
+                          expression: "formData.content",
+                        },
+                      ],
+                      attrs: { type: "text", rows: "6", cols: "50" },
+                      domProps: { value: _vm.formData.content },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.formData, "content", $event.target.value)
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
                       {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.formData.username,
-                        expression: "formData.username",
+                        staticClass: "mx-3 btn btn-primary",
+                        attrs: { type: "submit" },
                       },
-                    ],
-                    attrs: { type: "text" },
-                    domProps: { value: _vm.formData.username },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.formData, "username", $event.target.value)
-                      },
-                    },
-                  }),
-                  _vm._v(" "),
-                  _c("label", { attrs: { for: "content" } }, [
-                    _vm._v("Inserisci il contenuto"),
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.formData.content,
-                        expression: "formData.content",
-                      },
-                    ],
-                    attrs: { type: "text" },
-                    domProps: { value: _vm.formData.content },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.formData, "content", $event.target.value)
-                      },
-                    },
-                  }),
-                  _vm._v(" "),
-                  _c("button", { attrs: { type: "submit" } }, [
-                    _vm._v("Invia"),
+                      [_vm._v("Invia")]
+                    ),
                   ]),
                 ]
               ),
@@ -39765,14 +39790,17 @@ var render = function () {
             _vm._v(" "),
             _vm.post.comments.length > 0
               ? _c(
-                  "div",
+                  "ul",
+                  { staticClass: "mt-3" },
                   [
                     _c("h4", [_vm._v("Commenti:")]),
                     _vm._v(" "),
                     _vm._l(_vm.post.comments, function (comment) {
-                      return _c("div", { key: comment.id }, [
+                      return _c("li", { key: comment.id }, [
                         _vm._v(
                           "\n          " +
+                            _vm._s(comment.username) +
+                            ": " +
                             _vm._s(comment.content) +
                             "\n        "
                         ),

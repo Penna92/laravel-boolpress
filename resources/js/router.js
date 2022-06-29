@@ -10,6 +10,7 @@ import PostsComponent from "./pages/PostsComponent";
 import ContactComponent from "./pages/ContactComponent";
 import SinglePostComponent from "./pages/SinglePostComponent";
 import NotFoundComponent from "./pages/NotFoundComponent";
+import CategoryPostsComponent from "./pages/CategoryPostsComponent";
 const router = new VueRouter({
     // mode: "history" serve a farci sparire il cancelletto dalla navigazione
     mode: "history",
@@ -17,7 +18,7 @@ const router = new VueRouter({
         {
             path: "/",
             name: "home",
-            meta: { nome: "Clelia" },
+            // meta: { nome: "Clelia" },
             component: HomeComponent,
         },
         {
@@ -34,6 +35,11 @@ const router = new VueRouter({
             path: "/contact",
             name: "contact",
             component: ContactComponent,
+        },
+        {
+            path: "/categories/:slug",
+            name: "category-posts",
+            component: CategoryPostsComponent,
         },
         {
             path: "/posts/:slug",

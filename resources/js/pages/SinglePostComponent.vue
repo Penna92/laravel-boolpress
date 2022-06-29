@@ -5,7 +5,7 @@
         <h1>Titolo: {{ post.title }}</h1>
       </div>
       <div class="card-body">
-        <small class="mr-3">Creato il: {{ formatDate }}</small>
+        <small class="mr-3">Data ultima modifica: {{ formatDate }}</small>
         <!-- <div v-if="post.published == 1">
             <p class="badge-success d-inline-block p-1 rounded">Pubblicato</p>
           </div>
@@ -100,7 +100,7 @@ export default {
   computed: {
     // formattazione data
     formatDate() {
-      return this.post.created_at.substr(0, 19).replace("T", ", ");
+      return this.post.updated_at.substr(0, 19).replace("T", ", ");
     },
   },
 };

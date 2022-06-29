@@ -9,7 +9,10 @@ import AboutComponent from "./pages/AboutComponent";
 import PostsComponent from "./pages/PostsComponent";
 import ContactComponent from "./pages/ContactComponent";
 import SinglePostComponent from "./pages/SinglePostComponent";
+import NotFoundComponent from "./pages/NotFoundComponent";
 const router = new VueRouter({
+    // mode: "history" serve a farci sparire il cancelletto dalla navigazione
+    mode: "history",
     routes: [
         {
             path: "/",
@@ -36,6 +39,11 @@ const router = new VueRouter({
             path: "/posts/:slug",
             name: "single-post",
             component: SinglePostComponent,
+        },
+        {
+            path: "*",
+            name: "page-404",
+            component: NotFoundComponent,
         },
     ],
 });

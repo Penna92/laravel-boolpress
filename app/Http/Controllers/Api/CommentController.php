@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Post;
+use App\Comment;
 
-class PostController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        // $posts = Post::all();
-        $posts = Post::with('category')->get();
-        // dd($posts);
-        // $posts = Post::where("published", true)->get();
-        return response()->json($posts);
+        //
     }
 
     /**
@@ -27,10 +23,6 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -40,7 +32,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $newComment = new Comment();
+        $newComment->username = $data['username'];
+        $newComment->content = $data['content'];
+        $newComment->post_id = $data['post_id'];
+        $newComment->save();
+        return response()->json($newComment);
     }
 
     /**
@@ -49,14 +47,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        // dump($slug);
-        $post = Post::where("slug", $slug)->with(["category", "tags", "comments"])->first();
-        if (empty($post)) {
-            return response()->json(['Message' => "Post not found"], 404);
-        }
-        return response()->json($post);
+        //
     }
 
     /**
@@ -65,10 +58,6 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.

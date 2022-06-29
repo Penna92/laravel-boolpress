@@ -27,6 +27,21 @@
             :alt="`immagine ` + post.title"
           />
         </div>
+        <div>
+          <form @submit.prevent="addComment()">
+            <label for="username">Inserisci il nome</label>
+            <input v-model="formData.username" type="text" />
+            <label for="content">Inserisci il contenuto</label>
+            <input v-model="formData.content" type="text" />
+            <button type="submit">Invia</button>
+          </form>
+        </div>
+        <div v-if="post.comments.length > 0">
+          <h4>Commenti:</h4>
+          <div v-for="comment in post.comments" :key="comment.id">
+            {{ comment.content }}
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -38,14 +53,40 @@ export default {
   data() {
     return {
       post: null,
+      formData: {
+        username: "",
+        content: "",
+        post_id: "",
+      },
     };
+  },
+  methods: {
+    addComment() {
+      axios
+        .post("/api/comments", this.formData)
+        .then((response) => {
+          console.log(response);
+          this.post.comments.push(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
   mounted() {
     console.log(this.$route.params.slug);
     const slug = this.$route.params.slug;
-    axios.get(`/api/posts/${slug}`).then((response) => {
-      this.post = response.data;
-    });
+    axios
+      .get(`/api/posts/${slug}`)
+      .then((response) => {
+        this.post = response.data;
+        this.formData.post_id = this.post.id;
+      })
+      .catch((error) => {
+        console.log("Show error notification!");
+        // return Promise.reject(error);
+        this.$router.push({ name: "page-404" });
+      });
   },
   computed: {
     // formattazione data

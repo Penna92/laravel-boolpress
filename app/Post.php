@@ -19,4 +19,10 @@ class Post extends Model
     {
         return $this->belongsToMany('App\Tag');
     }
+
+    //TANTI COMMENTI PER UN SINGOLO POST
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }

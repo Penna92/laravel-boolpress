@@ -19,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get("/posts", "Api\PostController@index");
 Route::get("/posts/{slug}", "Api\PostController@show");
+
+//ROTTA PER SALVATAGGIO DEI COMMENTI IN POST, NON IN GET PERCHE' NON HO BISOGNO DI UNA VIEW MA DI RICHIAMARE LA FUNZIONE STORE
+Route::post("/comments", "Api\CommentController@store");

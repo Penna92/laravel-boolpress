@@ -23,12 +23,12 @@
             </div>
         </div>
     </div>
-    <a href="{{route('admin.comments.create')}}" class="btn btn-primary my-3">Crea nuova categoria</a>
     @if(session()->has('message'))
     <div class="alert alert-success">
         {{session()->get('message')}}
     </div>
     @endif
+    <h1>Lista dei commenti</h1>
     <table class="table">
         <thead>
             <tr>

@@ -12,7 +12,7 @@
                     @if ($category->posts)
                     <ul>
                         @foreach ($category->posts as $post)
-                        <li>{{ $post->title }}</li>
+                        <li>Titolo del post: {{ $post->title }}</li>
                         @endforeach
                     </ul>
                     @endif

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Comment;
+use Illuminate\Support\Facades\Redirect;
 
 class CommentController extends Controller
 {
@@ -84,6 +85,8 @@ class CommentController extends Controller
         // $comment->tags()->sync([]);
         // $comment = comment::findOrFail($id);
         $comment->delete();
-        return redirect()->route('admin.comments.index')->with("message", "Comment with id: {$comment->id} successfully deleted !");
+
+        // codice per rimanere sulla stessa pagina dopo una request
+        return Redirect::back()->with("message", "Comment with id: {$comment->id} successfully deleted !");
     }
 }

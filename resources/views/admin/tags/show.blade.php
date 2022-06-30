@@ -14,7 +14,7 @@
                     @if ($tag->posts)
                     <ul>
                         @foreach ($tag->posts as $post)
-                        <li>{{ $post->title }}</li>
+                        <li>Titolo del post: {{ $post->title }}</li>
                         @endforeach
                     </ul>
                     @endif

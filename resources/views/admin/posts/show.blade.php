@@ -4,6 +4,11 @@
 {{-- @dump($post->tags) --}}
 @section('content')
 <div class="container">
+    @if(session()->has('message'))
+    <div class="alert alert-success">
+        {{session()->get('message')}}
+    </div>
+    @endif
     <div class="card d-flex flex-column my-3 gap-3">
         <div class="card-header">
             <div class="container text-center">

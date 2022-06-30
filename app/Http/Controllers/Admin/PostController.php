@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\Category;
 use App\Tag;
+use App\Comment;
 
 // use Illuminate\Support\Carbon;
 
@@ -111,11 +112,12 @@ class PostController extends Controller
         // $post = Post::findOrFail($id);
         // dd($post);
         $currentUser = Auth::user();
+        $comments = Comment::all();
         // dd(Auth::user());
         // if ($currentUser->id != $post->id && $currentUser->id != 1) {
         //     abort(403);
         // }
-        return view('admin.posts.show', compact('post'));
+        return view('admin.posts.show', compact('post', 'comments'));
     }
 
     /**

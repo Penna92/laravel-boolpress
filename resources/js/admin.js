@@ -17,7 +17,19 @@ window.boolpress = {
         this.currentForm = e.currentTarget.parentNode;
         // console.log(this.currentForm);
         $("#deleteModal-body").html(
-            `sei sicuro di voler eliminare l'elemento con id: ${this.itemid}`
+            `sei sicuro di voler eliminare questo elemento?`
+        );
+        $("#deleteModal").modal("show");
+    },
+    openModalComments(e, id) {
+        e.preventDefault();
+        console.log(id);
+        this.itemid = id;
+        //console.log(e.currentTarget);
+        this.currentForm = e.currentTarget.parentNode;
+        // console.log(this.currentForm);
+        $("#deleteModal-body").html(
+            `sei sicuro di voler eliminare questo commento?`
         );
         $("#deleteModal").modal("show");
     },

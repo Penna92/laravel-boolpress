@@ -41,9 +41,32 @@
                 @endforeach
             </ul>
             @endif
-            <div>
-                {{-- <h2>Commenti:</h2> --}}
-                {{-- <p>{{$comments[0]->content}}</p> --}}
+            <div class="card">
+                <ul>
+                    <div class="card-header">
+                        <h4>Commenti:</h4>
+                    </div>
+                    @foreach ($comments as $comment)
+                    @if ($comment->post_id == $post->id)
+                    <div class="card-body">
+                        <li>
+                            <div class="d-flex align-items-start justify-content-between">
+                                <div>{{ $comment->username }}: {{ $comment->content }}</div>
+                                <div>
+                                    <form action="{{ route('admin.comments.destroy', $comment->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" onclick="boolpress.openModal(event, {{ $comment->id }})"
+                                            class="btn btn-danger delete">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <hr />
+                        </li>
+                    </div>
+                    @endif
+                    @endforeach
+                </ul>
             </div>
             {{-- @if (auth()->user()->id == $post->id) questa è una chiave di prova ma in realtà al posto di $post->id
             ci andrebbe un ipotetico $post->post_id --}}

@@ -50,10 +50,12 @@
             <div class="card-header">
               <h4>Commenti:</h4>
             </div>
-            <li v-for="comment in post.comments" :key="comment.id">
-              {{ comment.username }}: {{ comment.content }}
-              <hr />
-            </li>
+            <div class="card-body">
+              <li v-for="comment in post.comments" :key="comment.id">
+                {{ comment.username }}: {{ comment.content }}
+                <hr />
+              </li>
+            </div>
           </ul>
         </div>
       </div>

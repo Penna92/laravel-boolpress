@@ -50,6 +50,10 @@
                         <a class="nav-link {{Route::currentRouteName() == 'admin.tags.index' ? 'active' : ''}}"
                             href="{{ route('admin.tags.index') }}">Tags</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{Route::currentRouteName() == 'admin.comments.index' ? 'active' : ''}}"
+                            href="{{ route('admin.comments.index') }}">Comments</a>
+                    </li>
                     @endauth
                 </ul>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"

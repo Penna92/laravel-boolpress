@@ -2744,6 +2744,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SinglePostComponent",
   data: function data() {
@@ -44627,26 +44629,27 @@ var render = function () {
             _vm._v(" "),
             _c("div", { staticClass: "card" }, [
               _vm.post.comments.length > 0
-                ? _c(
-                    "ul",
-                    [
-                      _vm._m(0),
-                      _vm._v(" "),
+                ? _c("ul", [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "card-body" },
                       _vm._l(_vm.post.comments, function (comment) {
                         return _c("li", { key: comment.id }, [
                           _vm._v(
-                            "\n            " +
+                            "\n              " +
                               _vm._s(comment.username) +
                               ": " +
                               _vm._s(comment.content) +
-                              "\n            "
+                              "\n              "
                           ),
                           _c("hr"),
                         ])
                       }),
-                    ],
-                    2
-                  )
+                      0
+                    ),
+                  ])
                 : _vm._e(),
             ]),
           ]),

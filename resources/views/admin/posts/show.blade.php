@@ -41,6 +41,12 @@
                 @endforeach
             </ul>
             @endif
+            <div>
+                {{-- <h2>Commenti:</h2> --}}
+                {{-- <p>{{$comments[0]->content}}</p> --}}
+            </div>
+            {{-- @if (auth()->user()->id == $post->id) questa è una chiave di prova ma in realtà al posto di $post->id
+            ci andrebbe un ipotetico $post->post_id --}}
             <div class="d-flex align-items-start">
                 <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-warning mr-2">Edit</a>
                 <form action="{{ route('admin.posts.destroy', $post->id) }}" method="post">
@@ -50,6 +56,7 @@
                         class="btn btn-danger delete">Delete</button>
                 </form>
             </div>
+            {{-- @endif --}}
         </div>
     </div>
     @endsection

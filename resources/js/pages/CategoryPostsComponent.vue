@@ -7,7 +7,7 @@
             <h2>Categoria: {{ category.name }}</h2>
           </div>
           <div class="card-body">
-            <h4 v-if="category.posts.length > 0">Related posts</h4>
+            <h4 v-if="category && category.posts.length > 0">Related posts</h4>
             <h4 class="text-danger" v-if="category.posts.length == 0">
               Nessun post trovato per questa categoria
             </h4>

@@ -45,12 +45,17 @@
             </div>
           </form>
         </div>
-        <ul class="mt-3" v-if="post.comments.length > 0">
-          <h4>Commenti:</h4>
-          <li v-for="comment in post.comments" :key="comment.id">
-            {{ comment.username }}: {{ comment.content }}
-          </li>
-        </ul>
+        <div class="card">
+          <ul v-if="post.comments.length > 0">
+            <div class="card-header">
+              <h4>Commenti:</h4>
+            </div>
+            <li v-for="comment in post.comments" :key="comment.id">
+              {{ comment.username }}: {{ comment.content }}
+              <hr />
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

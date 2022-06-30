@@ -13,12 +13,65 @@
         hanno scelto BoolPress.com.
       </p>
     </div>
+    <div class="row justify-content-between align-items-center">
+      <div class="col-3">
+        <nav>
+          <ul class="p-0 my-2 d-flex flex-column justify-content-between">
+            <li
+              class="my-2 bg-dark p-1"
+              v-for="(category, index) in categories"
+              :key="index"
+            >
+              <router-link
+                :to="{
+                  name: 'category-posts',
+                  params: { slug: category.slug },
+                }"
+                >{{ category.name }}</router-link
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-8">
+        <carousel-component />
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
+import CarouselComponent from "../components/CarouselComponent.vue";
 export default {
   name: "HomeComponent",
+  components: {
+    CarouselComponent,
+  },
+  data() {
+    return {
+      categories: [],
+      posts: [],
+    };
+  },
+  mounted() {
+    axios
+      .get("/api/categories")
+      .then((res) => {
+        this.categories = res.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    axios
+      .get("/api/posts/")
+      .then((res) => {
+        this.posts = res.data.slice(0, 3);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
 };
 </script>
 

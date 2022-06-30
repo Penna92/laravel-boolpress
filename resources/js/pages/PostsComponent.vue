@@ -45,8 +45,8 @@ export default {
   name: "PostsComponent",
   data() {
     return {
-      titolo: "Work In Progress",
-      sottotitolo: "Sito in Costruzione",
+      // titolo: "Work In Progress",
+      // sottotitolo: "Sito in Costruzione",
       posts: [],
       categories: [],
       detail: null,

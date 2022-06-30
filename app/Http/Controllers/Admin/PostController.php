@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\Category;
 use App\Tag;
+
 // use Illuminate\Support\Carbon;
 
 class PostController extends Controller
@@ -32,7 +34,12 @@ class PostController extends Controller
     public function index()
     {
         // $posts = Post::all();
+
+        //se ci fosse una relazione tra utenti e post, così potremmo mostrare ad un utente soltanto i post che ha pubblicato lui stesso (commentato)
+
+        // $currentUser = Auth::user();
         $posts = Post::paginate(5);
+        // $posts = Post::where('post_id', $currentUser->id)paginate(5);
         return view('admin.posts.index', compact('posts'));
     }
 
@@ -98,11 +105,16 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
         // $mytime = CarbonImmutable::now()->toDateTimeString();
-        $post = Post::findOrFail($id);
+        // $post = Post::findOrFail($id);
         // dd($post);
+        $currentUser = Auth::user();
+        // dd(Auth::user());
+        // if ($currentUser->id != $post->id && $currentUser->id != 1) {
+        //     abort(403);
+        // }
         return view('admin.posts.show', compact('post'));
     }
 

@@ -5,6 +5,10 @@
  */
 
 require("./bootstrap");
+import Vue from "vue";
+import VueAgile from "vue-agile";
+
+Vue.use(VueAgile);
 
 window.axios = require("axios");
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";

@@ -17,8 +17,12 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
+//ROTTE PER I POST 
 Route::get("/posts", "Api\PostController@index");
 Route::get("/posts/{slug}", "Api\PostController@show");
+
+//ROTTE PER LE CATEGORIE
 Route::get("/categories", "Api\CategoryController@index"); //prova per le categorie
 Route::get("/categories/{slug}", "Api\CategoryController@show"); //prova per le categorie
 

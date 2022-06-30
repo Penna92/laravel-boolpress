@@ -7,6 +7,9 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
+// @import "bootstrap/dist/css/bootstrap.css";
+// @import "bootstrap-vue/dist/bootstrap-vue.css";
+
 $fa-font-path: "../fonts/font-awesome" !default;
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 @import "~@fortawesome/fontawesome-free/scss/regular";
@@ -38,5 +41,3 @@ h2 {
 .content p {
     font-size: 24px;
 }
-
-

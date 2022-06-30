@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Comment;
+use App\Mail\CommentMail;
+use Illuminate\Support\Facades\Mail;
 
 class CommentController extends Controller
 {
@@ -38,6 +40,7 @@ class CommentController extends Controller
         $newComment->content = $data['content'];
         $newComment->post_id = $data['post_id'];
         $newComment->save();
+        Mail::to('giacomopenna92@gmail.com')->send(new CommentMail($newComment->post));
         return response()->json($newComment);
     }
 
